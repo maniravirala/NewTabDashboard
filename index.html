@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>New Tab</title>
+
+    <script src="src/addTile.js" defer></script>
+    <script src="src/siteLogo.js" defer></script>
+    <script src="src/deleteTile.js" defer></script>
+    <script src="src/menuIcon.js" defer></script>
+    <script src="src/localStorage.js" defer></script>
+    <script src="src/search.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <!-- About  -->
+    </header>
+    <main class="flex">
+      <!-- Clock  -->
+      <section class="clock-section p-10 absolute top-10 right-10">
+        <my-clock></my-clock>
+      </section>
+
+      <!-- Search bar -->
+      <div class="search-bar mt-8 flex items-center justify-center">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search Google"
+          class="px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:border-blue-500 w-72"
+        />
+        <button
+          id="search-button"
+          class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-r"
+        >
+          Search
+        </button>
+      </div>     
+ 
+      <!-- Menu Icon  -->
+      <div id="menuIcon" class="cursor-pointer fixed top-4 right-4 z-10">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-gray-500 hover:text-gray-800"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            d="M3 9a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2zM3 3a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2zM3 15a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2z"
+          />
+        </svg>
+      </div>
+
+      <div class="tile">
+        <button
+          id="deleteButton"
+          class="bottom-4 right-4 bg-red-500 text-white hover:bg-red-600 p-2 rounded-full"
+        >
+          Delete Tile
+        </button>
+      </div>
+
+      <!-- Tiles container -->
+      <div class="tiles-container grid grid-cols-6 gap-4">
+        <div class="w-1/2 md:w-1/4 lg:w-1/5 p-4 fixed-tile">
+          <a
+            href="https://ums.lpu.in/lpuums/"
+            target="_blank"
+            class="w-1/4 p-2 sm:p-4"
+          >
+            <div
+              class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+              style="width: 7vw"
+            >
+              <!-- Logo/Image -->
+              <div class="p-2">
+                <img id="siteLogo" src="images/u.png" alt="Logo" class="w-9 h-9 mx-auto" />
+
+                <!-- Line below the logo -->
+                <div class="bg-gray-200 h-0.5 mt-1"></div>
+              </div>
+
+              <!-- URL Name -->
+              <div class="text-center p-2 pt-1">
+                <h3 class="font-normal text-sm text-gray-800 truncate">UMS</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Add Tile Button -->
+
+      <div class="addtile">
+        <button
+          id="addTileButton"
+          class="p-2 bg-blue-500 text-white hover:bg-blue-600 rounded-full fixed bottom-4 right-4"
+        >
+          Add Tile
+        </button>
+
+        <div
+          id="inputFields"
+          class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded-lg shadow-md"
+        >
+          <input
+            type="text"
+            id="titleInput"
+            class="w-full mb-2"
+            placeholder="Enter Tile Title"
+          />
+          <input
+            type="text"
+            id="urlInput"
+            class="w-full mb-2"
+            placeholder="Enter URL"
+          />
+          <button
+            id="submitButton"
+            class="bg-blue-500 text-white hover:bg-blue-600 p-2 rounded-full"
+          >
+            Add
+          </button>
+          <button
+            id="cancelButton"
+            class="bg-red-500 text-white hover:bg-red-600 p-2 rounded-full ml-2"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </main>
+    <div class="toast">
+        <div id="validurl">Please Enter Valid URL</div>
+        <div id="validtitle">Please Enter Valid Title</div>
+        <div id="validinput">Inputs can't be empty</div>
+        <div id="deleted">You can't delete this tile</div>
+        <div id="duplicate">The URL is already added</div>
+    </div>
+    <footer>
+      <!-- Footer  -->
+    </footer>
+  </body>
+  <!-- <script src="./src/five-habit-tracker/main.js"></script> -->
+  <script src="./src/clock/main.js"></script>
+</html>
