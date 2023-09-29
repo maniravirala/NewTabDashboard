@@ -17,6 +17,9 @@
     <script src="src/menuIcon.js" defer></script>
     <script src="src/localStorage.js" defer></script>
     <script src="src/search.js" defer></script>
+    <script src="src/addUser.js" defer></script>
+    <script src="src/detaAPI.js" defer></script>
+    <script src="./src/clock/main.js" defer></script>
   </head>
 
   <body>
@@ -24,29 +27,31 @@
       <!-- About  -->
     </header>
     <main class="flex">
+      <!-- Left Container  -->
       <div class="left-container">
-        <div class="topside"></div>
-
-        <!-- Search bar -->
-        <div class="search-bar mt-8 flex items-center justify-center">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Search Google"
-            class="px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:border-blue-500 w-72"
-          />
-          <button
-            id="search-button"
-            class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-r"
-          >
-            Search
-          </button>
+        <!-- TopSide -->
+        <div class="topside">
+          <!-- Search bar -->
+          <div class="search-bar mt-8 flex items-center justify-center">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search Google"
+              class="px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:border-blue-500 w-72"
+            />
+            <button
+              id="search-button"
+              class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-r"
+            >
+              Search
+            </button>
+          </div>
         </div>
 
+        <!-- BottomSide -->
         <div class="bottomside grid relative top-20">
           <!-- Tiles container -->
           <div class="tiles-container grid grid-cols-6 gap-4">
-            
             <!-- UMS -->
             <div class="w-1/2 md:w-1/4 lg:w-1/5 p-4 fixed-tile">
               <a
@@ -150,41 +155,92 @@
 
           <!-- Menu Icon  -->
           <div id="menuIcon" class="cursor-pointer menuContainer top-5">
-          <input type="checkbox" class="checkbox" name="" id="" />
-          <div class="hamburger-lines" id="hamburger-line">
-            <span class="line line1"> </span>
-            <span class="line line2"></span>
-            <span class="line line3"></span>
-          </div>
+            <input type="checkbox" class="checkbox" name="" id="" />
+            <div class="hamburger-lines" id="hamburger-line">
+              <span class="line line1"> </span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
 
-          <div class="menu-items hidden absolute" id="menu-item">
-            <li>
-              <button
-                id="deleteButton"
-                class="bottom-4 right-4 bg-red-500 text-white hover:bg-red-550 p-2 rounded-full py-1 px-4 w-32"
-              >
-                Delete Tile
-              </button>
-            </li>
-            <li><a href="#"></a>Other</li>
+            <div class="menu-items hidden absolute" id="menu-item">
+              <li>
+                <button
+                  id="deleteButton"
+                  class="bottom-4 right-4 bg-red-500 text-white hover:bg-red-550 p-2 rounded-full py-1 px-4 w-32"
+                >
+                  Delete Tile
+                </button>
+              </li>
+              <li><a href="#"></a>Other</li>
+            </div>
           </div>
-        </div>
-
         </div>
       </div>
 
-      <div class="right-container w-1/3 p-4">
+      <!-- Right Container-->
+      <div class="right-container w-1/3 p-4 flex mt-8 ml-24 flex-col">
         <!-- Clock  -->
-        <div class="clock-section p-10 absolute top-10 right-10">
+        <!-- <div class="clock-section p-10 absolute top-10 right-10"> -->
+        <div class="clock-section text-center p-6">
           <my-clock></my-clock>
         </div>
-        <div class="online-cient">
-          <iframe src="https://ums.lpu.in/lpuums" width="100%" height="500"></iframe>
+
+        <!-- Classes -->
+        <div
+          class="classes text-center grid grid-cols-3 gap-1 text-sm text-neutral-700"
+        >
+          <!-- <div class="tdyclass bg-indigo-100 m-1 rounded-lg">
+            <div class="timing p-1 bg-indigo-600 rounded-t-lg text-white">
+              <span>01-02 PM</span>
+            </div>
+            <div class="courseCode p-1">
+              <span>CSE322</span>
+            </div>
+            <div class="classRoom p-1">
+              <span>34-503</span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- User RegNO Password -->
+      <div class="userDetails">
+        <button
+          id="addUserBtn"
+          class="p-2 bg-blue-500 text-white hover:bg-blue-600 rounded-full fixed bottom-16 right-4"
+        >
+          Details
+        </button>
+        <div
+          id="inputDetails"
+          class=" hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded-lg shadow-md"
+        >
+          <label for="regNo">Reg No</label>
+          <input type="text" name="regNo" id="regNo" class="w-full mb-2" />
+          <label for="pass">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="pass"
+            class="w-full mb-2"
+          />
+
+          <button
+            id="submitUser"
+            class="bg-blue-500 text-white hover:bg-blue-600 p-2 rounded-full"
+          >
+            Add
+          </button>
+          <button
+            id="cancelUser"
+            class="bg-red-500 text-white hover:bg-red-600 p-2 rounded-full ml-2"
+          >
+            Cancel
+          </button>
         </div>
       </div>
 
       <!-- Add Tile Button -->
-
       <div class="addtile">
         <button
           id="addTileButton"
@@ -224,6 +280,7 @@
         </div>
       </div>
     </main>
+    <!-- Toast -->
     <div class="toast">
       <div id="validurl">Please Enter Valid URL</div>
       <div id="validtitle">Please Enter Valid Title</div>
@@ -235,6 +292,4 @@
       <!-- Footer  -->
     </footer>
   </body>
-  <!-- <script src="./src/five-habit-tracker/main.js"></script> -->
-  <script src="./src/clock/main.js"></script>
 </html>
