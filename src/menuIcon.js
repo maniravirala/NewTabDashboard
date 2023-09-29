@@ -1,6 +1,7 @@
-const menuIcon = document.getElementById("menuIcon");
-menuIcon.addEventListener("click", () => {
-    // Toggle the visibility of delete button
-    const deleteButton = document.getElementById("deleteButton");
-    deleteButton.classList.toggle("hidden");
+const menuIcon = document.querySelector("#hamburger-line");
+const checkbox = document.querySelector(".checkbox");
+const menuItem = document.getElementById("menu-item");
+
+checkbox.addEventListener("click", function () {
+  menuItem.classList.toggle("hidden");
 });

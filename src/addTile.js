@@ -49,14 +49,14 @@ function createTile(title, url) {
         <a href="${url}" target="_blank" class="w-1/4 p-2 sm:p-4">
             <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105" style="width: 7vw;">
                 <!-- Logo/Image -->
-                <div class="p-2">
+                <div class="p-1">
                     <img src="./images/${lowerCaseChar}.png" alt="Logo" class="w-9 h-9 mx-auto">
                     <!-- Line below the logo -->
-                    <div class="bg-gray-200 h-0.5 mt-1"></div>
+                    <div class="bg-gray-200 h-0.5 mt-3"></div>
                 </div>
 
                 <!-- URL Name -->
-                <div class="text-center p-2 pt-1">
+                <div class="text-center p-1 pt-1">
                     <h3 class="font-normal text-sm text-gray-800 truncate">
                         ${title}
                     </h3>

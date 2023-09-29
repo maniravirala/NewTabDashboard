@@ -24,76 +24,162 @@
       <!-- About  -->
     </header>
     <main class="flex">
-      <!-- Clock  -->
-      <section class="clock-section p-10 absolute top-10 right-10">
-        <my-clock></my-clock>
-      </section>
+      <div class="left-container">
+        <div class="topside"></div>
 
-      <!-- Search bar -->
-      <div class="search-bar mt-8 flex items-center justify-center">
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Search Google"
-          class="px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:border-blue-500 w-72"
-        />
-        <button
-          id="search-button"
-          class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-r"
-        >
-          Search
-        </button>
-      </div>     
- 
-      <!-- Menu Icon  -->
-      <div id="menuIcon" class="cursor-pointer fixed top-4 right-4 z-10">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 text-gray-500 hover:text-gray-800"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            d="M3 9a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2zM3 3a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2zM3 15a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2z"
+        <!-- Search bar -->
+        <div class="search-bar mt-8 flex items-center justify-center">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search Google"
+            class="px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:border-blue-500 w-72"
           />
-        </svg>
-      </div>
-
-      <div class="tile">
-        <button
-          id="deleteButton"
-          class="bottom-4 right-4 bg-red-500 text-white hover:bg-red-600 p-2 rounded-full"
-        >
-          Delete Tile
-        </button>
-      </div>
-
-      <!-- Tiles container -->
-      <div class="tiles-container grid grid-cols-6 gap-4">
-        <div class="w-1/2 md:w-1/4 lg:w-1/5 p-4 fixed-tile">
-          <a
-            href="https://ums.lpu.in/lpuums/"
-            target="_blank"
-            class="w-1/4 p-2 sm:p-4"
+          <button
+            id="search-button"
+            class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-r"
           >
-            <div
-              class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
-              style="width: 7vw"
-            >
-              <!-- Logo/Image -->
-              <div class="p-2">
-                <img id="siteLogo" src="images/u.png" alt="Logo" class="w-9 h-9 mx-auto" />
+            Search
+          </button>
+        </div>
 
-                <!-- Line below the logo -->
-                <div class="bg-gray-200 h-0.5 mt-1"></div>
-              </div>
+        <div class="bottomside grid relative top-20">
+          <!-- Tiles container -->
+          <div class="tiles-container grid grid-cols-6 gap-4">
+            
+            <!-- UMS -->
+            <div class="w-1/2 md:w-1/4 lg:w-1/5 p-4 fixed-tile">
+              <a
+                href="https://ums.lpu.in/lpuums/"
+                target="_blank"
+                class="w-1/4 p-2 sm:p-4"
+              >
+                <div
+                  class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+                  style="width: 7vw"
+                >
+                  <!-- Logo/Image -->
+                  <div class="p-1">
+                    <img
+                      id="siteLogo"
+                      src="images/u.png"
+                      alt="Logo"
+                      class="w-9 h-9 mx-auto"
+                    />
 
-              <!-- URL Name -->
-              <div class="text-center p-2 pt-1">
-                <h3 class="font-normal text-sm text-gray-800 truncate">UMS</h3>
-              </div>
+                    <!-- Line below the logo -->
+                    <div class="bg-gray-200 h-0.5 mt-3"></div>
+                  </div>
+
+                  <!-- URL Name -->
+                  <div class="text-center p-1 pt-1">
+                    <h3 class="font-normal text-sm text-gray-800 truncate">
+                      UMS
+                    </h3>
+                  </div>
+                </div>
+              </a>
             </div>
-          </a>
+            <!-- LMSEDU -->
+            <div class="w-1/2 md:w-1/4 lg:w-1/5 p-4 fixed-tile">
+              <a
+                href="https://lmsedu.netlify.app/"
+                target="_blank"
+                class="w-1/4 p-2 sm:p-4"
+              >
+                <div
+                  class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+                  style="width: 7vw"
+                >
+                  <!-- Logo/Image -->
+                  <div class="p-1">
+                    <img
+                      id="siteLogo"
+                      src="images/l.png"
+                      alt="Logo"
+                      class="w-9 h-9 mx-auto"
+                    />
+
+                    <!-- Line below the logo -->
+                    <div class="bg-gray-200 h-0.5 mt-3"></div>
+                  </div>
+
+                  <!-- URL Name -->
+                  <div class="text-center p-1 pt-1">
+                    <h3 class="font-normal text-sm text-gray-800 truncate">
+                      LMSEDU
+                    </h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- LPU LIVE-->
+            <div class="w-1/2 md:w-1/4 lg:w-1/5 p-4 fixed-tile">
+              <a
+                href="https://lpulive.lpu.in/"
+                target="_blank"
+                class="w-1/4 p-2 sm:p-4"
+              >
+                <div
+                  class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+                  style="width: 7vw"
+                >
+                  <!-- Logo/Image -->
+                  <div class="p-1">
+                    <img
+                      id="siteLogo"
+                      src="images/l.png"
+                      alt="Logo"
+                      class="w-9 h-9 mx-auto"
+                    />
+
+                    <!-- Line below the logo -->
+                    <div class="bg-gray-200 h-0.5 mt-3"></div>
+                  </div>
+
+                  <!-- URL Name -->
+                  <div class="text-center p-1 pt-1">
+                    <h3 class="font-normal text-sm text-gray-800 truncate">
+                      LPULIVE
+                    </h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Menu Icon  -->
+          <div id="menuIcon" class="cursor-pointer menuContainer top-5">
+          <input type="checkbox" class="checkbox" name="" id="" />
+          <div class="hamburger-lines" id="hamburger-line">
+            <span class="line line1"> </span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+
+          <div class="menu-items hidden absolute" id="menu-item">
+            <li>
+              <button
+                id="deleteButton"
+                class="bottom-4 right-4 bg-red-500 text-white hover:bg-red-550 p-2 rounded-full py-1 px-4 w-32"
+              >
+                Delete Tile
+              </button>
+            </li>
+            <li><a href="#"></a>Other</li>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+      <div class="right-container w-1/3 p-4">
+        <!-- Clock  -->
+        <div class="clock-section p-10 absolute top-10 right-10">
+          <my-clock></my-clock>
+        </div>
+        <div class="online-cient">
+          <iframe src="https://ums.lpu.in/lpuums" width="100%" height="500"></iframe>
         </div>
       </div>
 
@@ -139,11 +225,11 @@
       </div>
     </main>
     <div class="toast">
-        <div id="validurl">Please Enter Valid URL</div>
-        <div id="validtitle">Please Enter Valid Title</div>
-        <div id="validinput">Inputs can't be empty</div>
-        <div id="deleted">You can't delete this tile</div>
-        <div id="duplicate">The URL is already added</div>
+      <div id="validurl">Please Enter Valid URL</div>
+      <div id="validtitle">Please Enter Valid Title</div>
+      <div id="validinput">Inputs can't be empty</div>
+      <div id="deleted">You can't delete this tile</div>
+      <div id="duplicate">The URL is already added</div>
     </div>
     <footer>
       <!-- Footer  -->

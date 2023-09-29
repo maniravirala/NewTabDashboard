@@ -11,8 +11,8 @@ function toggleButtonState() {
   deleteTileButton.innerHTML = currentState;
   deleteTileButton.classList.toggle("bg-red-500", isShaking);
   deleteTileButton.classList.toggle("bg-green-500", !isShaking);
-  deleteTileButton.classList.toggle("hover:bg-red-600", isShaking);
-  deleteTileButton.classList.toggle("hover:bg-green-600", !isShaking);
+  deleteTileButton.classList.toggle("hover:bg-red-550", isShaking);
+  deleteTileButton.classList.toggle("hover:bg-green-550", !isShaking);
 
   tiles.forEach((tile) => {
     const tilesContainer = tile.querySelectorAll(".tile");
