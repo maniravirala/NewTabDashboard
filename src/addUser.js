@@ -1,13 +1,12 @@
 const inputUser = document.querySelector('#inputDetails');
 const user = document.querySelector('#regNo');
-const pass = document.querySelector('#pass');
-var userInput = user.value.trim();
-var passInput = pass.value.trim();
+const passw = document.querySelector('#pass');
 var regLocal = localStorage.getItem("registration");
 var passLocal = localStorage.getItem("password");
+var classesLocal = localStorage.getItem("classes");
 var addUserButton = document.getElementById("addUserBtn");
-var cancelButton = document.getElementById("cancelUser");
-var submitButton = document.getElementById("submitUser");
+var cancelUser = document.getElementById("cancelUser");
+var submitUser = document.getElementById("submitUser");
 
 
 // Show Input Fields When Add User Button is Clicked
@@ -16,25 +15,31 @@ addUserButton.addEventListener("click", function () {
 });
   
 // Hide Input Fields When Cancel Button is Clicked
-cancelButton.addEventListener("click", function () {
+cancelUser.addEventListener("click", function () {
     inputUser.classList.add("hidden");
     user.value = "";
-    pass.value = "";
+    passw.value = "";
 });
 
-submitButton.addEventListener("click", function () {
-    if (userInput && passInput) {
-        localStorage.setItem("registration", userInput);
-        localStorage.setItem("password",passInput);
-        getClasses(userInput,passInput);
+submitUser.addEventListener("click", function () {
+    if (user.value && passw.value) {
+        localStorage.setItem("registration", user.value);
+        localStorage.setItem("password",passw.value);
+        // chrome.storage.sync.set({registration: user.value})
+        // chrome.storage.sync.set({password:passw.value})
+        getClasses(user.value,passw.value);
         inputUser.classList.add("hidden");
         user.value = "";
-        pass.value = "";
+        passw.value = "";
     }
 });
-    
+
 document.addEventListener("DOMContentLoaded", function () {
-    if (regLocal && passLocal) {
-        getClasses(regLocal,passLocal);
+    classesLocal = JSON.parse(classesLocal);
+    if (classesLocal) {
+        classesLocal.forEach(element => {
+            getData(element)
+        });
     }
 });
+
